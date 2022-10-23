@@ -1,0 +1,16 @@
+import csv
+filename = input() 
+f = open(filename) 
+data = csv.reader(f)
+words = []
+word_count = []
+count = 0
+for r in data:
+    for w in r:
+        words.append(w)
+for word in words:
+    count = words.count(word)
+    while word not in word_count:
+        print(word, count)
+        word_count.append(word)
+        word_count.append(count)
